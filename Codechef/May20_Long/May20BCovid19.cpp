@@ -19,23 +19,8 @@
 #define ll long long
 using namespace std;
 
-typedef pair<int, int> pii;
-typedef vector<int> vi;
-typedef vector<pii> vpi;
-typedef vector<vi> vvi;
-typedef long long i64;
-typedef vector<i64> vi64;
-typedef vector<vi64> vvi64;
-typedef pair<i64, i64> pi64;
-typedef double ld;
-
-
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.precision(10);
-    cout << fixed;
     
     int t;
     cin>>t;
@@ -48,39 +33,41 @@ int main() {
     	forn(i,n){
     		cin>>arr[i];
 		}
-//		int min_answer=1,max_answer=1,max_value=1,min_value=1;
-//		forn(i,n-1){
-//			
-//			if((arr[i+1]-arr[i])<=2){
-//				++min_value;
-//				++max_value;
-//			}
-//			
-//			else{
-//				min_value=1;
-//				max_value=1;
-//			}
-//			
-//			min_answer=max(min_answer,min_value);
-//			max_answer=max(max_answer,max_value);
-//		}
-		int temp[n-1],j=0;
+		int max_answer=1,max_value=1;
+		
+		int min_value=1,x1=1,x2,final_min;
+		
+		int q=0;
 		
 		forn(i,n-1){
 			
-			if((arr[i+1]-arr[i])>=2){
-				temp[j++]=1;
+			bool flag=false;
+			
+			if((arr[i+1]-arr[i])<=2){
+				min_value++;
+				max_value++;
+				flag=true;
+			}
+			
+			if(flag){
+				x1=max(min_value,x1);
+				max_answer=max(max_answer,max_value);
 			}
 			else{
-				temp[j++]=0;
+				x2=min(x1,min_value);
+				min_value=1;
+				max_value=1;
+				q++;
 			}
 		}
 		
-		int max_answer=INT_MIN,min_answer=INT_MAX;
+		if(q>0)
+		final_min=min(x1,x2);
+		else{
+			final_min=x1;
+		}
 		
-		
-		
-		cout<<min_answer<<" "<<max_answer<<endl;
+		cout<<final_min<<" "<<max_answer<<endl;
 	}
 	return 0;
 }
