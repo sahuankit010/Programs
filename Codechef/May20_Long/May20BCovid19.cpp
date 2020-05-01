@@ -21,6 +21,10 @@ using namespace std;
 
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.precision(10);
+    cout << fixed;
     
     int t;
     cin>>t;
@@ -33,16 +37,11 @@ int main() {
     	forn(i,n){
     		cin>>arr[i];
 		}
-		int max_answer=1,max_value=1;
-		
-		int min_value=1,x1=1,x2,final_min;
-		
-		int q=0;
-		
+		int max_answer=1,max_value=1,min_value=1,x1=1,x2,final_min,q=0;
+		bool flag;
 		forn(i,n-1){
-			
-			bool flag=false;
-			
+		    
+		    flag=false;
 			if((arr[i+1]-arr[i])<=2){
 				min_value++;
 				max_value++;
@@ -67,7 +66,8 @@ int main() {
 			final_min=x1;
 		}
 		
-		cout<<final_min<<" "<<max_answer<<endl;
+		cout<<final_min<<" "<<max_answer;
+		cout<<"\n";
 	}
 	return 0;
 }
