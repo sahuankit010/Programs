@@ -41,7 +41,7 @@ int main() {
     	if(x==0 or y==0)
 			cout<<"0";
 		}
-		else cout<< x;
+		else cout<< x|y;
 		
 //	}
 
