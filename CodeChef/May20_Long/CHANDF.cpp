@@ -40,10 +40,9 @@ int main() {
     	
     	if(x==0 or y==0)
 			cout<<"0";
-		}
-		else cout<< x|y;
-		
-//	}
+		else 
+		cout<< (x|y)<<endl;
+	}
 
 
 	return 0;
