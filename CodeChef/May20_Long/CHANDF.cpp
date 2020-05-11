@@ -30,35 +30,19 @@ int main() {
     cin.tie(NULL);
     cout.precision(10);
     cout << fixed;
-//    int t;
-//    cin>>t;
-//    while(t--){
+    int t;
+    cin>>t;
+    while(t--){
     	long long int x,y,l,r;
      	cin>>x>>y>>l>>r;
-    // scanf("%lld%lld%lld%lld", &x,&y,&l,&r);
     	
     	ll large=INT_MIN,value,index;
     	
-    	for(ll i=l;i<=r;){
-    		
-    		value = (x&i)*(y&i);
-    		
-    		if(large<value){
-    			large=value;
-    			index=i;
-			}
-			else if(large==value){
-				index=min(index,i);
-			}
-			if(i<7){
-			    i++;
-			}
-			else{
-			    i=(i*2)+1;
-			}
-			
+    	if(x==0 or y==0)
+			cout<<"0";
 		}
-		cout<<index<<"\n";
+		else cout<< x;
+		
 //	}
 
 
