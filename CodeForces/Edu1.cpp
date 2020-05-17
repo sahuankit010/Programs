@@ -25,6 +25,8 @@
 using namespace std;
 
 
+
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
@@ -33,27 +35,39 @@ int main() {
     int t;
     cin>>t;
     while(t--){
-    	long long int x,y,l,r;
-     	cin>>x>>y>>l>>r;
-    	
-    	ll large=INT_MIN,value,index;
-    	
-    	if(x==0 or y==0)
-			cout<<"0";
-		else {
-			
-			if(l==0){
-				r--;
-				ll p= ~(r&0);
-				cout<<p<<endl;
-			}
-			else{
-			cout<< (x|y)<<endl;
-		}
+    ll a,b,c,d;
+    cin>>a>>b>>c>>d;
+    if(b>=a){
+    	cout<<b;
 	}
+	else{
+		
+		if(d>=c){
+			cout<<"-1";
+		}
+		
+		else{
+		
+//		while(a>0){
+//			
+//			total+=c;
+//			a=a-(c-d);
+//		}
+		ll total=0;
+		
+		total = ((a-b)/(c-d))*c;
+		total +=b;
+		cout<<total;
+	}
+	}
+    
+    cout<<endl;
+    
 }
-
 
 	return 0;
 }
+
+
+
 
